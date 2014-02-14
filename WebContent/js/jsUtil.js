@@ -2,7 +2,7 @@
  * 
  */
  
- //
+ //查看一个方法里面带有的参数
  function checkFunctionarguments(fun){
  	var message='';
  	var args=fun.arguments;    //arguments是javascript对象的属性，任何typeof为function的对象都有该属性
@@ -20,7 +20,7 @@
  			}
  			message+='<br>';
  		}else if(oType=='string'||oType=='boolean'||oType=='number'){
- 			message+='arguments['+i+']&nbsp;typeof:'+oType+'&nbsp;value:'+args[i];
+ 			message+='arguments['+i+']&nbsp;typeof:'+oType+'&nbsp;value:'+args[i]+'<br>';
  		}else{
  			message+='arguments['+i+']&nbsp;typeof:'+oType+'&nbsp;<br>';
  		}
@@ -28,5 +28,8 @@
  	}
  	
  }
+ 
+ 
+ 
  
  
