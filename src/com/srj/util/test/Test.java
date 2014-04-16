@@ -1,8 +1,15 @@
 package com.srj.util.test;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.jasper.tagplugins.jstl.core.If;
+
+import com.srj.util.file.TextFileEncodingConverter;
 import com.srj.util.instance.InstancePool;
 
 public class Test {
@@ -38,12 +45,21 @@ public class Test {
 	}
 	
 	
-	public static void main(String[] args) {
-		List<String> list=new ArrayList<String>();
+	public static void main(String[] args) throws InterruptedException {
+		/*List<String> list=new ArrayList<String>();
 		for(int i=0;i<400000000;i++){
 			list.add(null);
 		}
-		System.out.println(list.size());
+		System.out.println(list.size());*/
+		/*Thread.sleep(30*1000);
+		
+		boolean bo=false;
+		int booli=0;
+		*/
+		
+		Test.writeSql();
+		
+		
 	}
 	
 	@Override
@@ -67,6 +83,45 @@ public class Test {
 				+"[String]"+string+"\n"
 				+"[Object]"+t+"\n";
 				
+	}
+	
+	
+	
+	public static  void writeSql(){
+		
+		List<String> lists=readFile(new File("d:\\user.sql"), "utf-8");
+		for(String line:lists){
+			String words[]=line.split(",");
+			String insertSql="INSERT INTO users_system_architecture (department, room) VALUES ('"+words[0]+"', '"+words[1]+"');";
+			System.out.println(insertSql);
+		}
+		
+		
+		
+	}
+	
+	
+	
+	private static List<String> readFile(File file,String encodingFrom){
+		List<String> lines=new ArrayList<String>();
+		try {
+			FileInputStream fis = new FileInputStream(file);
+            InputStreamReader isr = new InputStreamReader(fis, encodingFrom);
+            BufferedReader br = new BufferedReader(isr);
+            
+            for(String line = br.readLine(); line != null; line = br.readLine()){
+            	lines.add(line);
+            }
+            
+            br.close();
+            isr.close();
+            fis.close();
+            
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return lines;
 	}
 
 	
