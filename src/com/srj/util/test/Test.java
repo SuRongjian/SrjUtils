@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.apache.jasper.tagplugins.jstl.core.If;
 
+import com.srj.util.file.ExcelManageByJXL;
 import com.srj.util.file.TextFileEncodingConverter;
 import com.srj.util.instance.InstancePool;
 
@@ -57,8 +58,8 @@ public class Test {
 		int booli=0;
 		*/
 		
-		Test.writeSql();
-		
+		//Test.writeSql();
+		Test.testFunction();
 		
 	}
 	
@@ -122,6 +123,21 @@ public class Test {
 			e.printStackTrace();
 		}
 		return lines;
+	}
+	
+	
+	public static void testFunction(){
+		List<String> lines=new ArrayList<String>();
+		ExcelManageByJXL embj=new ExcelManageByJXL("D:\\document\\sendi\\20140402\\系统用户用户架构.xls");
+		
+		for(int row=0;row<313;row++){
+			String insert="INSERT INTO users_system_architecture(department,room) VALUES (";
+			insert+="'"+embj.getCellValueToString(0, 0, row)+"','"+embj.getCellValueToString(0, 1, row)+"');";
+			lines.add(insert);
+		}
+		
+		TextFileEncodingConverter.saveFile(new File("d:/sql.sql"), "utf-8", lines);
+		
 	}
 
 	

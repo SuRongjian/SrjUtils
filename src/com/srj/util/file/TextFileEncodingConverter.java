@@ -92,7 +92,7 @@ public class TextFileEncodingConverter {
 	 * @return
 	 * 			返回读取到的所有行
 	 */
-	private static List<String> readFile(File file,String encodingFrom){
+	public  static List<String> readFile(File file,String encodingFrom){
 		List<String> lines=new ArrayList<String>();
 		try {
 			FileInputStream fis = new FileInputStream(file);
@@ -124,7 +124,7 @@ public class TextFileEncodingConverter {
 	 * @param lines
 	 * 			字符串集合
 	 */
-	private static void saveFile(File file,String encodingTo,List<String> lines){
+	public static void saveFile(File file,String encodingTo,List<String> lines){
 		try {
 			 FileOutputStream fos=new FileOutputStream(file);
 	         OutputStreamWriter osw=new OutputStreamWriter(fos);
