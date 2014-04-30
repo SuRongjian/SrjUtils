@@ -59,7 +59,8 @@ public class Test {
 		*/
 		
 		//Test.writeSql();
-		Test.testFunction();
+		//Test.testFunction();
+		System.out.println("abs");
 		
 	}
 	
