@@ -1,0 +1,3 @@
+imap jj <ESC>
+nnoremap j jzz
+nnoremap k kzz
