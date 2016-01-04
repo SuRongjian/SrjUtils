@@ -7,12 +7,14 @@ branch="personalized"
 
 vrapper=".vrapperrc"
 vimperator=".vimperatorrc"
-vim="_gvimrc"
+vim=".vimrc"
+gvim="_gvimrc"
 this="bulldozer.sh"
 
 vrapperFile="$home/$vrapper"
 vimperatorFile="$home/$vimperator"
 vimFile="$home/$vim"
+gvimFile="$home/$gvim"
 thisFile="$home/softwareInstall/myBin/$this"
 
 function initRepository() {
@@ -31,6 +33,7 @@ function backup() {
 	cp $vrapperFile $repository
 	cp $vimperatorFile $repository
 	cp $vimFile $repository
+	cp $gvimFile $repository
 	cp $thisFile $repository
 	git add .
 	git commit -m "提交点-`date`"
@@ -44,6 +47,7 @@ function restore() {
 	cp $vrapper $vrapperFile
 	cp $vimperator $vimperatorFile
 	cp $vim $vimFile
+	cp $gvim $gvimFile
 	cp $this $thisFile
 	echo "已恢复成功！"
 }
