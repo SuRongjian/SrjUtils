@@ -22,7 +22,7 @@ function initRepository() {
 	fi
 	cd $repository
 	git checkout $branch
-	git pull
+	git pull origin $branch
 	echo "已经切换到$branch分支" 
 }
 
