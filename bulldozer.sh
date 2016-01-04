@@ -1,6 +1,6 @@
 #!/bin/bash
 
-home="/home/rongjiansu"
+home="`echo ~`"
 repositoryParent="$home/e/workspace/space4/other"
 repository="$repositoryParent/SrjUtils/"
 branch="personalized"
