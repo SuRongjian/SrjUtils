@@ -1,3 +1,4 @@
 imap jj <ESC>
 nnoremap j jzz
 nnoremap k kzz
+nnoremap gh <C-O>
