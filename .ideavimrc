@@ -1,0 +1,7 @@
+imap jj <ESC>
+nmap gh :action Back<CR>
+nmap gl :action Forward<CR>
+nmap gw :action CloseContent<CR>
+nmap gW :action CloseAllEditors<CR>
+
+set scrolloff=4

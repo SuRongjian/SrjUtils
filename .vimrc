@@ -1,6 +1,7 @@
 imap jj <ESC>
 set nu
 set hlsearch
+set scrolloff=5
 
 " vundle
 set nocompatible              
