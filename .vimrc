@@ -1,4 +1,5 @@
 imap jj <ESC>
+imap <C-v> <ESC>"+p
 vmap <C-c> "+y
 
 set nu
