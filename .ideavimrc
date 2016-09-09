@@ -3,5 +3,6 @@ nmap gh :action Back<CR>
 nmap gl :action Forward<CR>
 nmap gw :action CloseContent<CR>
 nmap gW :action CloseAllEditors<CR>
+nmap gr :action RenameElement<CR>
 
 set scrolloff=4
